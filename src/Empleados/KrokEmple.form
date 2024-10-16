@@ -1718,19 +1718,7 @@
                     <Component class="javax.swing.JTable" name="tablaempleado">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="11" rowCount="0">
-                            <Column editable="true" title="ID" type="java.lang.Object"/>
-                            <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                            <Column editable="true" title="Apellido" type="java.lang.Object"/>
-                            <Column editable="true" title="Tipo doc" type="java.lang.Object"/>
-                            <Column editable="true" title="Documento" type="java.lang.Object"/>
-                            <Column editable="true" title="IdArea" type="java.lang.Object"/>
-                            <Column editable="true" title="Area" type="java.lang.Object"/>
-                            <Column editable="true" title="IdCargo" type="java.lang.Object"/>
-                            <Column editable="true" title="Cargo" type="java.lang.Object"/>
-                            <Column editable="true" title="Telefono " type="java.lang.Object"/>
-                            <Column editable="true" title="Correo" type="java.lang.Object"/>
-                          </Table>
+                          <Table columnCount="0" rowCount="0"/>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">

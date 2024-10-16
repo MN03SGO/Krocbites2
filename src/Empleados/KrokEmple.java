@@ -55,6 +55,7 @@ public class KrokEmple extends javax.swing.JFrame {
         this.setExtendedState(KrokEmple.MAXIMIZED_BOTH);
          listar();
          listarArea();
+         listarEmpleado();
          EnviarAreas.setEnabled(false);
          EnviarCargos.setEnabled(false);
 
@@ -85,6 +86,15 @@ public class KrokEmple extends javax.swing.JFrame {
             
         }
         tablaArea.setModel(modeloArea);
+    }
+     private void listarEmpleado(){
+            try{
+                DefaultTableModel modelo;
+                modelo=daoE.listar();
+                tablaempleado.setModel(modelo);
+            }catch (Exception e){
+                
+            }
     }
 
     /**
@@ -1027,7 +1037,7 @@ public class KrokEmple extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Tipo doc", "Documento", "IdArea", "Area", "IdCargo", "Cargo", "Telefono ", "Correo"
+
             }
         ));
         jScrollPane3.setViewportView(tablaempleado);
@@ -1255,9 +1265,9 @@ public class KrokEmple extends javax.swing.JFrame {
         em.setCorreo(TxCorreo.getText());
         if(daoE.insertar(em)){
             JOptionPane.showMessageDialog(null, "Empleado registrado con exito");
-            //limpiarDatosEmpleado();
-            //limpiarTablaEmpleado();
-            //listarEmpleado();
+            limpiarDatosEmpleados();
+            limpiarTablaEmpledos();
+            listarEmpleado();
             //cantEmpleados();
         }else{
             JOptionPane.showMessageDialog(null, "Error Al Registrar el Empleado");
@@ -1317,6 +1327,29 @@ public class KrokEmple extends javax.swing.JFrame {
     void limpiarTablaArea(){
         for(int i=0;i<modeloArea.getRowCount();i++){
         modeloArea.removeRow(i);
+        i=0-1;
+        }
+     }
+ ////
+    /**METODO DE LIMPIAR EN LOS TX Y TABLA EMPLEADOS**/
+    ////
+    void limpiarDatosEmpleados(){
+        TxEmpleado.setText("");
+        TxNombreEmple.setText("");
+        TxApellidoEmple.setText("");
+        TxDui.setText("");
+        TxTelefono.setText("");
+        TxApellidoEmple.setText("");
+        TxCorreo.setText("");
+        TxIDareaEmple.setText("");
+        TxAreaEmple.setText("");
+        TxIDcargoEmple.setText("");
+        TxCargoEmple.setText("");
+        
+    }
+    void limpiarTablaEmpledos(){
+        for(int i=0;i<modeloEmpleados.getRowCount();i++){
+        modeloEmpleados.removeRow(i);
         i=0-1;
         }
      }

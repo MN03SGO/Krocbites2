@@ -25,10 +25,8 @@ public class ConexionEmpleados {
      PreparedStatement ps;
      ResultSet rs;
     
-    
-    
     public boolean insertar(empleado e){
-         String sql="insert into empleados(nombre,apellido,tipoDoc,documento,id_area,id_cargo,telefono,correo) values(?,?,?,?,?,?,?,?)";
+        String sql="insert into empleados (nombre,apellido,tipoDoc,documento,id_area,id_cargo,telefono,correo) values (?,?,?,?,?,?,?,?)";
         try{
             con=cn.conectar();
             ps=con.prepareStatement(sql);
@@ -40,21 +38,23 @@ public class ConexionEmpleados {
             ps.setInt(6, e.getIdCargo());
             ps.setString(7, e.getTelefono());
             ps.setString(8, e.getCorreo());
-            
             int n=ps.executeUpdate();
-                    if(n!=0){
-                        return true;
-                        
-                    }else {
-                        return false;
-                    }
-                    
-        }catch (Exception er){
-             JOptionPane.showConfirmDialog(null,er);
-             return false;
-         } 
-    
-        
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception er){
+            JOptionPane.showConfirmDialog(null, er);
+            return false;
+        }
     }
     
+     
+     
+     
+     
+    
+    
+   
 }

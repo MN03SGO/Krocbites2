@@ -43,6 +43,7 @@ public class KrokEmple extends javax.swing.JFrame {
     DefaultTableModel modeloEmpleados=new DefaultTableModel();
  
 
+
     /**
      * Creates new form KrokEmple
      */
@@ -1244,6 +1245,26 @@ public class KrokEmple extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarAreaActionPerformed
 
     private void RegistrarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarEmpleActionPerformed
+       em.setNombre(TxNombreEmple.getText());
+        em.setApellido(TxApellidoEmple.getText());
+        em.setTipodoc(TipoDoc.getSelectedItem().toString());
+        em.setDocumento(TxDui.getText());
+        em.setIdArea(Integer.parseInt(TxIDareaEmple.getText()));
+        em.setIdCargo(Integer.parseInt(TxIDcargoEmple.getText()));
+        em.setTelefono(TxTelefono.getText());
+        em.setCorreo(TxCorreo.getText());
+        if(daoE.insertar(em)){
+            JOptionPane.showMessageDialog(null, "Empleado registrado con exito");
+            //limpiarDatosEmpleado();
+            //limpiarTablaEmpleado();
+            //listarEmpleado();
+            //cantEmpleados();
+        }else{
+            JOptionPane.showMessageDialog(null, "Error Al Registrar el Empleado");
+        }
+        
+        
+        
         
     }//GEN-LAST:event_RegistrarEmpleActionPerformed
 
@@ -1264,6 +1285,7 @@ public class KrokEmple extends javax.swing.JFrame {
         TxIDareaEmple.setText(TxIDarea.getText());
         TxAreaEmple.setText(TxNombreArea.getText());
         EnviarAreas.setEnabled(false);
+        panel.setSelectedComponent(pempleados);
     }//GEN-LAST:event_EnviarAreasActionPerformed
 
     private void EnviarCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarCargosActionPerformed

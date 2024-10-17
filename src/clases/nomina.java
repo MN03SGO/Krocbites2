@@ -1,7 +1,7 @@
 
 package clases;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -11,16 +11,18 @@ public class nomina {
     int id;
     Date fecha;
     int ctrabajo;
+    double total;
     int idempleado;
     int idcargo;
 
     public nomina() {
     }
 
-    public nomina(int id, Date fecha, int ctrabajo, int idempleado, int idcargo) {
+    public nomina(int id, Date fecha, int ctrabajo, int idempleado,double total, int idcargo) {
         this.id = id;
         this.fecha = fecha;
         this.ctrabajo = ctrabajo;
+        this.total = total;
         this.idempleado = idempleado;
         this.idcargo = idcargo;
     }
@@ -64,7 +66,16 @@ public class nomina {
     public void setIdcargo(int idcargo) {
         this.idcargo = idcargo;
     }
-    
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+  
     
     
     

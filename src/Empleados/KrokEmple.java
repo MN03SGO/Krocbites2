@@ -214,7 +214,7 @@ public class KrokEmple extends javax.swing.JFrame {
         TotalNomina = new javax.swing.JTextField();
         RegistrarNomina = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablanomina = new javax.swing.JTable();
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -1343,15 +1343,16 @@ public class KrokEmple extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TxCantidadTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TotalNomina)))
+                        .addComponent(TotalNomina))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(195, 195, 195)))
                 .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
@@ -1386,7 +1387,7 @@ public class KrokEmple extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablanomina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1402,7 +1403,7 @@ public class KrokEmple extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable1);
+        jScrollPane4.setViewportView(tablanomina);
 
         javax.swing.GroupLayout PnominaLayout = new javax.swing.GroupLayout(Pnomina);
         Pnomina.setLayout(PnominaLayout);
@@ -1994,7 +1995,6 @@ public class KrokEmple extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane panel;
     private javax.swing.JPanel parea;
     private javax.swing.JPanel pcargo;
@@ -2004,5 +2004,6 @@ public class KrokEmple extends javax.swing.JFrame {
     private javax.swing.JTable tablaArea;
     private javax.swing.JTable tablacargos;
     private javax.swing.JTable tablaempleado;
+    private javax.swing.JTable tablanomina;
     // End of variables declaration//GEN-END:variables
 }

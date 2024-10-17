@@ -53,7 +53,6 @@ public class ConexionEmpleados {
             return false;
         }
     }
-    
      public DefaultTableModel listar(){
          DefaultTableModel modelo;
          String [] titulos={"ID","Nombre","Apellido","Tipo Doc","Documento","Id Area","Area","ID Cargo","Cargo","Telefono","Correo"};
@@ -67,7 +66,6 @@ public class ConexionEmpleados {
                     "ON e.id_area=a.id_area\n" +
                     "INNER JOIN cargos c\n" +
                     "ON e.id_cargo=c.id_cargo";
-        
         try{
             con=cn.conectar();
             ps=con.prepareStatement(sql);
@@ -144,8 +142,6 @@ public class ConexionEmpleados {
             return false;
         }
    }
-   
-    
       public boolean eliminar(empleado em){
           
          String sql="delete from empleados where id_empleado=?";
@@ -164,6 +160,32 @@ public class ConexionEmpleados {
             return false;
         }
       }
+       public boolean BuscarEmpleadoN(empleado em){
+       String sql="SELECT * from empleados where documento=?";
+       try{
+            con=cn.conectar();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, em.getDocumento());
+            rs=ps.executeQuery();
+            if(rs.next()){
+                em.setId(rs.getInt(1));
+                em.setNombre(rs.getString(2));
+                em.setApellido(rs.getString(3));
+                em.setTipodoc(rs.getString(4));
+                em.setDocumento(rs.getString(5));
+                em.setIdArea(rs.getInt(6));
+                em.setIdCargo(rs.getInt(7));
+                em.setTelefono(rs.getString(8));
+                em.setCorreo(rs.getString(9));
+                return true;
+            }else{
+                 return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+   }
       
       
       

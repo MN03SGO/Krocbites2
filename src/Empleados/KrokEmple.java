@@ -65,10 +65,11 @@ public class KrokEmple extends javax.swing.JFrame {
     private void listar(){
         List<cargo> lista=daoC.listar();
         modeloCargo=(DefaultTableModel)  tablacargos.getModel();
-        Object[] ob=new Object[2];
+        Object[] ob=new Object[3];
         for(int i=0;i<lista.size();i++){
             ob[0]=lista.get(i).getId();
             ob[1]=lista.get(i).getNombre();
+            ob[2]=lista.get(i).getPago();
             modeloCargo.addRow(ob);
             
         }
@@ -140,6 +141,8 @@ public class KrokEmple extends javax.swing.JFrame {
         EliminarCargos = new javax.swing.JButton();
         BuscarCargos = new javax.swing.JButton();
         EnviarCargos = new javax.swing.JButton();
+        PagoCargo = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
         parea = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -195,12 +198,14 @@ public class KrokEmple extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         TxNombreNomina = new javax.swing.JTextField();
         TxApellidoNomina = new javax.swing.JTextField();
         TxIdcargoNomina = new javax.swing.JTextField();
         TxCargoNomina = new javax.swing.JTextField();
-        TxPagoNomina = new javax.swing.JTextField();
+        IdNomina = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        PagoNomina = new javax.swing.JTextField();
         jPanel16 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -529,7 +534,7 @@ public class KrokEmple extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Cargos"
+                "ID", "Cargos", "Pago"
             }
         ));
         tablacargos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -603,35 +608,46 @@ public class KrokEmple extends javax.swing.JFrame {
             }
         });
 
+        PagoCargo.setBackground(new java.awt.Color(255, 255, 255));
+        PagoCargo.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        jLabel35.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setText("Pago:");
+
         javax.swing.GroupLayout pcargoLayout = new javax.swing.GroupLayout(pcargo);
         pcargo.setLayout(pcargoLayout);
         pcargoLayout.setHorizontalGroup(
             pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pcargoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pcargoLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxCargo, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(TxID)))
-                    .addGroup(pcargoLayout.createSequentialGroup()
-                        .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(BuscarCargos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pcargoLayout.createSequentialGroup()
                                 .addComponent(RegistrarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(ModificarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                .addComponent(ModificarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(EliminarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pcargoLayout.createSequentialGroup()
+                                .addComponent(BuscarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(EnviarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pcargoLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EliminarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EnviarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 453, Short.MAX_VALUE)
+                            .addComponent(PagoCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxCargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(134, 134, 134)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         pcargoLayout.setVerticalGroup(
             pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,6 +663,10 @@ public class KrokEmple extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(TxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
+                        .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PagoCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel35))
+                        .addGap(50, 50, 50)
                         .addGroup(pcargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(RegistrarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ModificarCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1220,6 +1240,10 @@ public class KrokEmple extends javax.swing.JFrame {
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Cargo:");
 
+        jLabel34.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel34.setText("ID:");
+
         jLabel30.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Pago:");
@@ -1234,25 +1258,29 @@ public class KrokEmple extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(TxPagoNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(TxCargoNomina))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(TxIdcargoNomina))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxDocumentoNomina)
-                            .addComponent(TxApellidoNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                            .addComponent(TxNombreNomina, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addComponent(PagoNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(TxCargoNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(TxIdcargoNomina))
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TxDocumentoNomina)
+                                .addComponent(TxApellidoNomina)
+                                .addComponent(TxNombreNomina, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(IdNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))))
                 .addGap(18, 18, 18)
                 .addComponent(BuscarNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -1268,6 +1296,10 @@ public class KrokEmple extends javax.swing.JFrame {
                         .addComponent(TxDocumentoNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IdNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxNombreNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1278,15 +1310,14 @@ public class KrokEmple extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxIdcargoNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxCargoNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxPagoNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PagoNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
@@ -1394,16 +1425,16 @@ public class KrokEmple extends javax.swing.JFrame {
         PnominaLayout.setVerticalGroup(
             PnominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnominaLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addContainerGap()
                 .addGroup(PnominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PnominaLayout.createSequentialGroup()
-                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RegistrarNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
+                        .addComponent(RegistrarNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(78, 78, 78))
         );
 
         panel.addTab("Nomina", Pnomina);
@@ -1455,10 +1486,12 @@ public class KrokEmple extends javax.swing.JFrame {
       int fila=tablacargos.getSelectedRow();
       TxID.setText(tablacargos.getValueAt(fila, 0).toString());
       TxCargo.setText(tablacargos.getValueAt(fila, 1).toString());
+      PagoCargo.setText(tablacargos.getValueAt(fila, 2).toString());
     }//GEN-LAST:event_tablacargosMouseClicked
     //* ACCION DEL BOTON REGISTRAR EN LA SECCION CARGOS Y BD*//
     private void RegistrarCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarCargosActionPerformed
         cr.setNombre(TxCargo.getText());
+        cr.setPago(Double.parseDouble(PagoCargo.getText()));
         if(daoC.insertar(cr)){
             JOptionPane.showMessageDialog(null, "Cargo registrado con exito");
               limpiarDatosCargo();
@@ -1477,6 +1510,7 @@ public class KrokEmple extends javax.swing.JFrame {
         else{
             cr.setId(Integer.parseInt(TxID.getText()));
              cr.setNombre(TxCargo.getText());
+              cr.setPago(Double.parseDouble(PagoCargo.getText()));
              if(daoC.editar(cr)){
                  JOptionPane.showMessageDialog(null, "Se modifico con exito");
                   limpiarDatosCargo();
@@ -1507,10 +1541,12 @@ public class KrokEmple extends javax.swing.JFrame {
         if(daoC.buscar(cr)){
             TxID.setText(cr.getId()+"");
             TxCargo.setText(cr.getNombre());
+            PagoCargo.setText(cr.getPago()+"");
         }else{
             JOptionPane.showConfirmDialog(null, "El cargo no existe");
             TxID.setText("");
             TxCargo.setText("");
+            PagoCargo.setText("");
         } 
          //* TERMINAN ACCION DE TABLA CARGOS Y BD*//
     }//GEN-LAST:event_BuscarCargosActionPerformed
@@ -1626,13 +1662,6 @@ public class KrokEmple extends javax.swing.JFrame {
         panel.setSelectedComponent(pempleados);
     }//GEN-LAST:event_EnviarAreasActionPerformed
 
-    private void EnviarCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarCargosActionPerformed
-        TxIDcargoEmple.setText(TxID.getText());
-        TxCargoEmple.setText(TxCargo.getText());
-        EnviarCargos.setEnabled(false);
-        panel.setSelectedComponent(pempleados);
-    }//GEN-LAST:event_EnviarCargosActionPerformed
-
     private void ModificarEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarEmpleadosActionPerformed
        int fila=tablaempleado.getSelectedRow();
         if(fila==-1){
@@ -1740,7 +1769,20 @@ public class KrokEmple extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarEmpleadoActionPerformed
 
     private void BuscarNominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarNominaActionPerformed
-        // TODO add your handling code here:
+       em.setDocumento(TxDocumentoNomina.getText());
+        if(daoE.BuscarEmpleadoN(em)){
+            IdNomina.setText(em.getId()+"");
+            TxNombreNomina.setText(em.getNombre());
+            TxApellidoNomina.setText(em.getApellido()); 
+            TxIdcargoNomina.setText(em.getIdCargo()+"");
+            cr.setId(Integer.parseInt(TxIDcargoEmple.getText()));
+            daoC.buscar(cr);
+            TxCargoNomina .setText(cr.getNombre());
+            PagoNomina.setText(cr.getPago()+"");
+        }else{
+            JOptionPane.showMessageDialog(null, "El Empleado No Existe");
+            //limpiarDatosEmpleados();
+        }
     }//GEN-LAST:event_BuscarNominaActionPerformed
 
     private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
@@ -1748,8 +1790,15 @@ public class KrokEmple extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel25MouseClicked
 
     private void RegistrarNominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarNominaActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
     }//GEN-LAST:event_RegistrarNominaActionPerformed
+
+    private void EnviarCargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarCargosActionPerformed
+        TxIDcargoEmple.setText(TxID.getText());
+        TxCargoEmple.setText(TxCargo.getText());
+        EnviarCargos.setEnabled(false);
+        panel.setSelectedComponent(pempleados);
+    }//GEN-LAST:event_EnviarCargosActionPerformed
     
 
 
@@ -1759,6 +1808,7 @@ public class KrokEmple extends javax.swing.JFrame {
     void limpiarDatosCargo(){
         TxID.setText("");
         TxCargo.setText("");
+        PagoCargo.setText("");
     }
     void limpiarTablaCargo(){
         for(int i=0;i<modeloCargo.getRowCount();i++){
@@ -1857,9 +1907,12 @@ public class KrokEmple extends javax.swing.JFrame {
     private javax.swing.JButton EmpleCargosBuscar;
     private javax.swing.JButton EnviarAreas;
     private javax.swing.JButton EnviarCargos;
+    private javax.swing.JTextField IdNomina;
     private javax.swing.JButton ModificarAreas;
     private javax.swing.JButton ModificarCargos;
     private javax.swing.JButton ModificarEmpleados;
+    private javax.swing.JTextField PagoCargo;
+    private javax.swing.JTextField PagoNomina;
     private javax.swing.JPanel Pnomina;
     private javax.swing.JButton RegistrarArea;
     private javax.swing.JButton RegistrarCargos;
@@ -1886,7 +1939,6 @@ public class KrokEmple extends javax.swing.JFrame {
     private javax.swing.JTextField TxNombreArea;
     private javax.swing.JTextField TxNombreEmple;
     private javax.swing.JTextField TxNombreNomina;
-    private javax.swing.JTextField TxPagoNomina;
     private javax.swing.JTextField TxTelefono;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1914,6 +1966,8 @@ public class KrokEmple extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

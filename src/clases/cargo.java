@@ -11,13 +11,14 @@ package clases;
 public class cargo {
     int id;
     String nombre;
-
+    double pago;
     public cargo() {
     }
 
-    public cargo(int id, String nombre) {
+    public cargo(int id, String nombre, double pago) {
         this.id = id;
         this.nombre = nombre;
+        this.pago = pago;
     }
 
     public int getId() {
@@ -34,6 +35,14 @@ public class cargo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public double getPago() {
+        return pago;
+    }
+
+    public void setPago(double pago) {
+        this.pago = pago;
     }
     
 }

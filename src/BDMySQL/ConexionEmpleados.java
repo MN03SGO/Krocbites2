@@ -4,12 +4,15 @@
  */
 package BDMySQL;
 
-import clases.empleado;
 import java.sql.Connection;
-import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import clases.empleado;
+
 
 
 
@@ -89,8 +92,87 @@ public class ConexionEmpleados {
             return null;
         }
     }
-     }
-     
+      public boolean editar(empleado en){
+       String sql="update empleados set nombre=?, apellido=?, tipoDoc=?, documento=?,id_area=?,id_cargo=?,telefono=?,correo=? "+
+                    "where id_empleado=?";
+       try{
+            con=cn.conectar();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, en.getNombre());
+            ps.setString(2, en.getApellido());
+            ps.setString(3, en.getTipodoc());
+            ps.setString(4, en.getDocumento());
+            ps.setInt(5, en.getIdArea());
+            ps.setInt(6, en.getIdCargo());
+            ps.setString(7, en.getTelefono());
+            ps.setString(8, en.getCorreo());
+            ps.setInt(9, en.getId());
+            int n=ps.executeUpdate();
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+   }
+    public boolean Buscar(empleado em){
+       String sql="SELECT * from empleados where id_empleado=?";
+       try{
+            con=cn.conectar();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, em.getId());
+            rs=ps.executeQuery();
+            if(rs.next()){
+                em.setId(rs.getInt(1));
+                em.setNombre(rs.getString(2));
+                em.setApellido(rs.getString(3));
+                em.setTipodoc(rs.getString(4));
+                em.setDocumento(rs.getString(5));
+                em.setIdArea(rs.getInt(6));
+                em.setIdCargo(rs.getInt(7));
+                em.setTelefono(rs.getString(8));
+                em.setCorreo(rs.getString(9));
+                return true;
+            }else{
+                 return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+   }
+   
+    
+      public boolean eliminar(empleado em){
+          
+         String sql="delete from empleados where id_empleado=?";
+       try{
+            con=cn.conectar();
+            ps=con.prepareStatement(sql); 
+            ps.setInt(1, em.getId());
+            int n=ps.executeUpdate();
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+      }
+      
+      
+      
+      
+      
+      
+      
+
+    }
 
      
      

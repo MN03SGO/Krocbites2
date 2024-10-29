@@ -197,7 +197,7 @@ ConexionUsuarios dao=new ConexionUsuarios();
     private void btnINICIARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnINICIARActionPerformed
        usu=dao.login(Txusuario.getText(),Txclave.getText());
        if(usu.getUsuario()!=null &&usu.getPassword()!=null){
-           JOptionPane.showMessageDialog(null, "Bienvenido usuario: "+Txusuario.getText());
+           JOptionPane.showMessageDialog(null, "Bienvenido");
            KrokEmple newframe = new KrokEmple();
            newframe.setVisible(true);
            this.dispose();

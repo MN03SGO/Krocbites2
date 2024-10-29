@@ -4,7 +4,7 @@
  */
 package Empleados;
 import javax.swing.*;
-import BDMySQL.ConectorMySQL;
+import BDMySQL.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,8 +32,8 @@ import krocbites2.Login;
  * @author anoni
  */
 public class Planilla extends javax.swing.JFrame {
-   ConectorMySQL conec = new ConectorMySQL();
-Connection conectar = conec.Conectar(); // Aquí obtienes la conexión
+   conexion conec = new conexion();
+Connection conectar = conec.conectar(); // Aquí obtienes la conexión
 
 
     /**

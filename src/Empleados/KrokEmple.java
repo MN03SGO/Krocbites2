@@ -84,9 +84,7 @@ public class KrokEmple extends javax.swing.JFrame {
     ConexionUsuarios daoU=new ConexionUsuarios();
     DefaultTableModel modeloUsuario=new DefaultTableModel();
     
-    //asistencias asis=new asistencias();
-    //DaoAsistencia daoAs=new DaoAsistencia();
-    //DefaultTableModel modeloAsistencias=new DefaultTableModel();
+    
     
  
     String Ruta = "";
@@ -98,7 +96,7 @@ public class KrokEmple extends javax.swing.JFrame {
     public KrokEmple() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/img/cocodrilo.png")).getImage());
-        this.setLocationRelativeTo(this);
+     
         this.setLocationRelativeTo(null);
         this.setExtendedState(KrokEmple.MAXIMIZED_BOTH);
          listar();
@@ -190,7 +188,6 @@ public class KrokEmple extends javax.swing.JFrame {
             ob[0]=lista.get(i).getIdarea();
             ob[1]=lista.get(i).getNomArea();
             modeloArea.addRow(ob);
-            
         }
         tablaArea.setModel(modeloArea);
     }
@@ -1173,16 +1170,14 @@ public class KrokEmple extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pareaLayout.createSequentialGroup()
-                        .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pareaLayout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TxIDarea, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pareaLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(27, 27, 27)
-                                .addComponent(TxNombreArea)))
-                        .addGap(95, 95, 95))
+                        .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxNombreArea, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                            .addComponent(TxIDarea))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pareaLayout.createSequentialGroup()
                         .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BuscarArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1194,7 +1189,7 @@ public class KrokEmple extends javax.swing.JFrame {
                         .addGroup(pareaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EliminarAreas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(EnviarAreas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(43, 43, 43)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(482, 482, 482))
         );
@@ -1471,6 +1466,9 @@ public class KrokEmple extends javax.swing.JFrame {
         tablaempleado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablaempleadoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tablaempleadoMouseEntered(evt);
             }
         });
         jScrollPane3.setViewportView(tablaempleado);
@@ -2778,7 +2776,7 @@ public class KrokEmple extends javax.swing.JFrame {
             PagoNomina.setText(cr.getPago()+"");
         }else{
             JOptionPane.showMessageDialog(null, "El Empleado No Existe");
-            //limpiarDatosEmpleado();
+            limpiarDatosEmpleados();
         }
     }//GEN-LAST:event_BuscarNominaActionPerformed
 
@@ -2809,8 +2807,7 @@ public class KrokEmple extends javax.swing.JFrame {
             limpiarDatosNomina();
             limpiarTablaNomina();
             listarNomina();
-             //cantNominaPendientes();
-            // cantNominasT();
+            
         }else{
             JOptionPane.showMessageDialog(null, "Error Al Registrar la Nomina");
         }
@@ -2979,13 +2976,13 @@ public class KrokEmple extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarNominaPagoActionPerformed
 
     private void tablaPagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaPagoMouseClicked
-       int fila=tablaPago.getSelectedRow();
-        IDpago.setText(tablaPago.getValueAt(fila, 0).toString());
-        IDemplePago.setText(tablaPago.getValueAt(fila, 1).toString());
-        NombPagoEmple.setText(tablaPago.getValueAt(fila, 2).toString());
-        ApePagoEmple.setText(tablaPago.getValueAt(fila, 3).toString());
-        DocPagoEmple.setText(tablaPago.getValueAt(fila, 4).toString());
-        IDcargoPago.setText(tablaPago.getValueAt(fila, 5).toString());
+        int fila=tablaPago.getSelectedRow();
+         IDpago.setText(tablaPago.getValueAt(fila, 0).toString());
+         IDemplePago.setText(tablaPago.getValueAt(fila, 1).toString());
+         NombPagoEmple.setText(tablaPago.getValueAt(fila, 2).toString());
+         ApePagoEmple.setText(tablaPago.getValueAt(fila, 3).toString());
+         DocPagoEmple.setText(tablaPago.getValueAt(fila, 4).toString());
+         IDcargoPago.setText(tablaPago.getValueAt(fila, 5).toString());
         CargoPago.setText(tablaPago.getValueAt(fila, 6).toString());
         fecha1.setDate(java.sql.Date.valueOf(tablaPago.getValueAt(fila, 7).toString()));
         fecha2.setDate(java.sql.Date.valueOf(tablaPago.getValueAt(fila, 8).toString()));
@@ -3227,6 +3224,10 @@ int fila=tabladatos.getSelectedRow();
         TxCargo.setText("");
         PagoCargo.setText("");
     }//GEN-LAST:event_LimpiarCaActionPerformed
+
+    private void tablaempleadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaempleadoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tablaempleadoMouseEntered
 
 ////
     

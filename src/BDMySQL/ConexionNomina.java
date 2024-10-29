@@ -45,22 +45,22 @@ public class ConexionNomina {
  public DefaultTableModel listar(){
          DefaultTableModel modelo;
          String [] titulos={"ID Nomina","Fecha","ID Empleado","Nombre","Apellido","Documento",
-            "ID Cargo","Cargo","Precio C","Cant","Total"};
+            "ID Cargo","Cargo","Precio Cargo","Cant","Total","Estado"};
          String [] registros=new String[11];
         modelo=new DefaultTableModel(null,titulos);
         
         String sql="SELECT n.id,n.fecha,n.idempleado,e.nombre,e.apellido,e.documento,\n" +
-"            n.idcargo,c.nom_cargo,c.pago,n.ctrabajo,n.total FROM nomina n\n" +
-"            INNER JOIN empleados e\n" +
-"            ON n.idempleado=e.id_empleado\n" +
-"            INNER JOIN cargos c\n" +
-"            on e.id_cargo-c.id_cargo;";
+                    "n.idcargo,c.nom_cargo,c.pago,n.ctrabajo,n.total FROM nomina n\n" +
+                    "INNER JOIN empleados e\n" +
+                    "ON n.idempleado=e.id_empleado\n" +
+                    "INNER JOIN cargos c\n" +
+                    "on e.id_cargo=c.id_cargo;";
         try{
             con=cn.conectar();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
-                registros[0]=rs.getString("Id");
+                registros[0]=rs.getString("id");
                 registros[1]=rs.getString("fecha");
                 registros[2]=rs.getString("idempleado");
                 registros[3]=rs.getString("nombre");
@@ -68,9 +68,10 @@ public class ConexionNomina {
                 registros[5]=rs.getString("documento");
                 registros[6]=rs.getString("idcargo");
                 registros[7]=rs.getString("nom_cargo");
-                registros[8]=rs.getString("Pago");
+                registros[8]=rs.getString("pago");
                 registros[9]=rs.getString("ctrabajo");
                 registros[10]=rs.getString("total");
+               
                 modelo.addRow(registros);
             }
             return modelo;

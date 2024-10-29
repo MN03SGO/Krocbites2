@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package krocbites2;
-import BDMySQL.ConectorMySQL;
+import BDMySQL.conexion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -75,18 +75,18 @@ public class ConexionPago {
        public DefaultTableModel listar(){
         DefaultTableModel modelo;
         
-        String [] titulos={"ID Pago","IDEMPLEADO","Nombre","Apellido","Documento",
-            "IDCargo","Cargo","fecha1","fecha2","Total"};
+        String [] titulos={"ID Pago","ID Empleado","Nombre","Apellido","Documento",
+            "ID Cargo","Cargo","fecha 1","fecha 2","Total"};
         
         String [] registros=new String[10];
         modelo=new DefaultTableModel(null,titulos);
         
         String sql="SELECT p.id,p.idempleado,e.nombre,e.apellido,e.documento,\n" +
-                    "e.id_cargo,c.nom_cargo,p.fecha1,p.fecha2,p.total FROM pagos p \n" +
-                    "INNER JOIN empleados e \n" +
-                    "on e.id_empleado=p.idempleado\n" +
-                    "INNER JOIN cargos c \n" +
-                    "ON c.id_cargo=e.id_cargo";
+                "e.id_cargo,c.nom_cargo,p.fecha1,p.fecha2,p.total FROM pagos p \n" +
+                "INNER JOIN empleados e \n" +
+                "on e.id_empleado=p.idempleado\n" +
+                "INNER JOIN cargos c \n" +
+                "ON c.id_cargo=e.id_cargo";
         
         try{
             con=cn.conectar();

@@ -72,45 +72,51 @@ public class ConexionPago {
             return false;
         }
    }
-       public DefaultTableModel listar(){
-        DefaultTableModel modelo;
+      public DefaultTableModel listar() {
+    DefaultTableModel modelo;
+    
+    String[] titulos = {"ID Pago", "ID Empleado", "Nombre", "Apellido", "Documento",
+        "ID Cargo", "Cargo", "Fecha 1", "Fecha 2", "Total"};
+    
+    modelo = new DefaultTableModel(null, titulos);
+    
+    String sql = "SELECT p.id, p.idempleado, e.nombre, e.apellido, e.documento, " +
+                 "e.id_cargo, c.nom_cargo, p.fecha1, p.fecha2, p.total " +
+                 "FROM pagos p " +
+                 "INNER JOIN empleados e ON e.id_empleado = p.idempleado " +
+                 "INNER JOIN cargos c ON c.id_cargo = e.id_cargo";
+    
+    try {
+        con = cn.conectar();
+        ps = con.prepareStatement(sql);
+        rs = ps.executeQuery();
         
-        String [] titulos={"ID Pago","ID Empleado","Nombre","Apellido","Documento",
-            "ID Cargo","Cargo","fecha 1","fecha 2","Total"};
-        
-        String [] registros=new String[10];
-        modelo=new DefaultTableModel(null,titulos);
-        
-        String sql="SELECT p.id,p.idempleado,e.nombre,e.apellido,e.documento,\n" +
-                "e.id_cargo,c.nom_cargo,p.fecha1,p.fecha2,p.total FROM pagos p \n" +
-                "INNER JOIN empleados e \n" +
-                "on e.id_empleado=p.idempleado\n" +
-                "INNER JOIN cargos c \n" +
-                "ON c.id_cargo=e.id_cargo";
-        
-        try{
-            con=cn.conectar();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
-                registros[0]=rs.getString("id");
-                registros[1]=rs.getString("idempleado");
-                registros[2]=rs.getString("nombre");
-                registros[3]=rs.getString("apellido");
-                registros[4]=rs.getString("documento");
-                registros[5]=rs.getString("id_cargo");
-                registros[6]=rs.getString("nom_cargo");
-                registros[7]=rs.getString("fecha1");
-                registros[8]=rs.getString("fecha2");
-                registros[9]=rs.getString("total");
-                modelo.addRow(registros);
-            }
-            return modelo;
-        }catch(Exception e){
-            JOptionPane.showConfirmDialog(null, e);
-            return null;
+        while (rs.next()) {
+            String[] registros = new String[10];  // Crear un nuevo array para cada fila
+            
+            registros[0] = rs.getString("id");
+            registros[1] = rs.getString("idempleado");
+            registros[2] = rs.getString("nombre");
+            registros[3] = rs.getString("apellido");
+            registros[4] = rs.getString("documento");
+            registros[5] = rs.getString("id_cargo");
+            registros[6] = rs.getString("nom_cargo");
+            registros[7] = rs.getString("fecha1");
+            registros[8] = rs.getString("fecha2");
+            registros[9] = rs.getString("total");
+            
+            modelo.addRow(registros);  // Añadir la fila al modelo
         }
-       }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+        return null;
+    }
+    
+    return modelo;
+}
+
+      
+      
         public boolean editar(pago pa){
        String sql="update pagos set idempleado=?,total=?,fecha1=?,fecha2=? where id=?";
        try{

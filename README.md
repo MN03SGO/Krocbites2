@@ -1,3 +1,4 @@
-KrocBites
+KROCBITES
 
-![LOG4iIni](https://github.com/user-attachments/assets/3c0c01ef-2ff3-43a7-881c-d4c68bf73c2f)
+
+![Screenshot 2024-11-06 232252](https://github.com/user-attachments/assets/b7a0d2f8-bbd2-47f5-a175-128b82988529)

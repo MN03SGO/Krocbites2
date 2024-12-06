@@ -8,7 +8,10 @@ PROYECTO DE SISTEMA DE INVENTARIO DE UNA EMPRESA
 
 **PROXIMOS UPDATES**
 
--Punto de venta
--Sistema de inventario bodega/sala de ventas
--Arreglo de login por vulneracion ante una inyeccion SQL
--Graficas para productos mas vendidos y entre otra cositas que agregare : )
+- Punto de venta.
+
+- Sistema de inventario bodega/sala de ventas.
+
+- Arreglo de login por vulneracion ante una inyeccion SQL.
+
+- Graficas para productos mas vendidos y entre otra cositas que agregare : )

@@ -9,12 +9,12 @@ BD: CRUD_GALLETAS
 
 
 
-<---TABLA CATEGORIA--->
+<---TABLA CATEGORIA (1)--->
 
 -id_Categoria (int) PRIMARY KEY
 -categoría (varchar(30))
 
-<---TABLA CLIENTES--->
+<---TABLA CLIENTES (2)--->
 
 -id_Clientes (int) PRIMARY KEY
 -nombre (varchar(30))
@@ -24,10 +24,10 @@ BD: CRUD_GALLETAS
 -correo (varchar(60))
 
 
-<---TABLA ENTRADAS--->
+<---TABLA ENTRADAS (3)--->
 
 -id_Entradas (int) PRIMARY KEY
--nomProd (varchar(30))
+-nombProdu (varchar(30))
 -id_Categoria (int) FOREIGN KEY
 -stock	(int)
 -fecha (time(7))
@@ -37,7 +37,7 @@ BD: CRUD_GALLETAS
 -subtotal  (decimal(10,2))	
 -total (decimal(10,2))
 
-<---TABLA PROVEEDOR--->
+<---TABLA PROVEEDOR (4)--->
 -id_provedor (int) PRIMARY KEY
 -nombre (varchar(30))
 -apellido (varchar(30))
@@ -46,7 +46,7 @@ BD: CRUD_GALLETAS
 -telefono (varchar(30))
 -correo (varchar(60))
 
-<---TABLA SALIDAS--->
+<---TABLA SALIDAS (5)--->
 
 -id_Salidas (int) PRIMARY KEY
 -id_Entradas (int)  FOREIGN KEY
@@ -56,7 +56,7 @@ BD: CRUD_GALLETAS
 -subtotal (decimal(10,2))
 -total (decimal(10,2))
 
-<---TABLA USUARIOS--->
+<---TABLA USUARIOS (6)--->
 -id_Usuarios (int) PRIMARY KEY
 -nombre (varchar(30))
 -apellido (varchar(30))

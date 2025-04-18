@@ -1,0 +1,71 @@
+<--*** PROYECTO DE SISTEMA DE INVENTARIO DE UNA EMPRESA 
+DE GALLETAS (Krocbites) ***--->
+BD: CRUD_GALLETAS
+*****CABE RECALCAR QUE LLEVA LAS FOREIGN KEY Y LAS PRIMARY KEY SOLO HACEN LAS CONEXIONES POR SU PARTE : )*****
+
+
+|||*** TABLAS ***|||
+
+
+
+
+<---TABLA CATEGORIA--->
+
+-id_Categoria (int) PRIMARY KEY
+-categoría (varchar(30))
+
+<---TABLA CLIENTES--->
+
+-id_Clientes (int) PRIMARY KEY
+-nombre (varchar(30))
+-apellido (varchar(30))
+-documento (varchar(30))
+-telefono (varchar(30))
+-correo (varchar(60))
+
+
+<---TABLA ENTRADAS--->
+
+-id_Entradas (int) PRIMARY KEY
+-nomProd (varchar(30))
+-id_Categoria (int) FOREIGN KEY
+-stock	(int)
+-fecha (time(7))
+-id_provedor (int)  FOREIGN KEY
+-precioEntra (decimal(10,2))
+-precioVenta (decimal(10,2))
+-subtotal  (decimal(10,2))	
+-total (decimal(10,2))
+
+<---TABLA PROVEEDOR--->
+-id_provedor (int) PRIMARY KEY
+-nombre (varchar(30))
+-apellido (varchar(30))
+-documento (varchar(30))
+-direccion (varchar(100))
+-telefono (varchar(30))
+-correo (varchar(60))
+
+<---TABLA SALIDAS--->
+
+-id_Salidas (int) PRIMARY KEY
+-id_Entradas (int)  FOREIGN KEY
+-cantidad (int) 
+-id_Clientes (int)  FOREIGN KEY
+-fecha (date)
+-subtotal (decimal(10,2))
+-total (decimal(10,2))
+
+<---TABLA USUARIOS--->
+-id_Usuarios (int) PRIMARY KEY
+-nombre (varchar(30))
+-apellido (varchar(30))
+-documento (varchar(30))
+-direccion (varchar(100))
+-telefono (varchar(30))
+-correo (varchar(60))
+-tipo_Usuario (varchar(20))
+-usuario (varchar(15))
+-contra (varchar(10))
+
+/////////////////////////////////////////////////

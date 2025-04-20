@@ -17,13 +17,13 @@ public class Clase_Conexion_Usuarios {
     String telefono;
     String correo;
     String tipo_usuario;
-    String usuariio;
+    String usuario;
     String contra;
 
     public Clase_Conexion_Usuarios() {
     }
 
-    public Clase_Conexion_Usuarios(int id_Usuarios, String nombre, String apellido, String documento, String direccion, String telefono, String correo, String tipo_usuario, String usuariio, String contra) {
+    public Clase_Conexion_Usuarios(int id_Usuarios, String nombre, String apellido, String documento, String direccion, String telefono, String correo, String tipo_usuario, String usuario, String contra) {
         this.id_Usuarios = id_Usuarios;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -32,7 +32,7 @@ public class Clase_Conexion_Usuarios {
         this.telefono = telefono;
         this.correo = correo;
         this.tipo_usuario = tipo_usuario;
-        this.usuariio = usuariio;
+        this.usuario = usuario;
         this.contra = contra;
     }
 
@@ -100,12 +100,12 @@ public class Clase_Conexion_Usuarios {
         this.tipo_usuario = tipo_usuario;
     }
 
-    public String getUsuariio() {
-        return usuariio;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setUsuariio(String usuariio) {
-        this.usuariio = usuariio;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getContra() {
@@ -117,6 +117,4 @@ public class Clase_Conexion_Usuarios {
     }
     
     
-    
 }
-

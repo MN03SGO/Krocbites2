@@ -19,20 +19,16 @@ public class Conexion_BD {
     String user="sa";
     String pass="root";
     
-    public Connection conectar(){
-        try{
-            con=DriverManager.getConnection(url,user,pass);
-            System.out.println("Conexion establecida...");
-            
-        
-        }catch(SQLException e){
-           JOptionPane.showMessageDialog(null, "Fallo de conexion...");
-        
-        }
-        return con;
-        
-      
+    public Connection conectar() {
+    try {
+        con = DriverManager.getConnection(url, user, pass);
+        System.out.println("Conexion establecida...");
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Fallo de conexion: " + e.getMessage());
+        System.out.println("Error: " + e.getMessage());
     }
+    return con;
+}
 
 
 }

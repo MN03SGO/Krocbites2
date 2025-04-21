@@ -7,6 +7,17 @@ package Login;
 
 
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+import Panta_principal.Panta_inicio;
+import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
+import Conexiones_BD.Conexion_Usuarios;
+
+
+
 /**
  *
  * @author anoni
@@ -16,6 +27,12 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    //CONEXIONES BD
+    Conexion_Usuarios BD_Usu = new Conexion_Usuarios (); 
+    Clase_Conexion_Usuarios Class_Usu = null;
+   
+    
     public Login() {
         this.setUndecorated(true);
         initComponents();
@@ -49,7 +66,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         BTN_INGRE = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Contra_Ingre = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,7 +110,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setBorder(null);
+        Contra_Ingre.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,7 +135,7 @@ public class Login extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                                .addComponent(jPasswordField1))))
+                                .addComponent(Contra_Ingre))))
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BTN_INGRE, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,7 +157,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Contra_Ingre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,7 +191,24 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void BTN_INGREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_INGREActionPerformed
-        
+    String usuario = Usu_Ingre.getText();  
+    char[] contra = Contra_Ingre.getPassword();  
+
+    try {
+        Class_Usu = BD_Usu.login(usuario, contra);  
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error en el login: " + ex.getMessage());
+    }
+
+    if (Class_Usu != null && Class_Usu.getUsuario() != null) {
+        JOptionPane.showMessageDialog(null, "INGRESO EXITOSO");
+        Panta_inicio ini = new Panta_inicio();
+        ini.setVisible(true); 
+        this.dispose(); 
+    } else {
+        JOptionPane.showMessageDialog(null, "FALLIDO...");
+    }
+
     }//GEN-LAST:event_BTN_INGREActionPerformed
 
     /**
@@ -214,6 +248,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTN_INGRE;
+    private javax.swing.JPasswordField Contra_Ingre;
     private javax.swing.JTextField Usu_Ingre;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -221,7 +256,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables

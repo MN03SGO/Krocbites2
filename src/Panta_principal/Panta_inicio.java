@@ -15,7 +15,6 @@ public class Panta_inicio extends javax.swing.JFrame {
      */
     public Panta_inicio() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -92,7 +92,7 @@ public class carga extends javax.swing.JFrame {
     private void Barra_Carga() {
     barraCarga.setStringPainted(true);  
     barraCarga.setForeground(Color.BLACK);  
-    barraCarga.setBackground(Color.WHITE); 
+    barraCarga.setBackground(Color.WHITE);  
     Timer mTimer = new Timer(45, (ActionEvent e) -> {
         int currentValue = barraCarga.getValue();
         if (currentValue < 100) {

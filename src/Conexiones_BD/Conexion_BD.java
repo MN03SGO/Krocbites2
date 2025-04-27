@@ -14,21 +14,19 @@ import javax.swing.JOptionPane;
  */
 public class Conexion_BD {
     Connection con;
-    String bd="CRUD_GALLETAS";
-    String url="jdbc:sqlserver://localhost:1433;databaseName="+bd;
-    String user="sa";
-    String pass="root";
-    
+    String bd = "CRUD_GALLETAS";
+    String url = "jdbc:sqlserver://localhost:1433;databaseName=" + bd + ";encrypt=true;trustServerCertificate=true"; 
+    String user = "sa";
+    String pass = "root";
+
     public Connection conectar() {
-    try {
-        con = DriverManager.getConnection(url, user, pass);
-        System.out.println("Conexion establecida...");
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Fallo de conexion: " + e.getMessage());
-        System.out.println("Error: " + e.getMessage());
+        try {
+            con = DriverManager.getConnection(url, user, pass);
+            System.out.println("Conexion establecida...");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Fallo de conexion: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
+        }
+        return con;
     }
-    return con;
-}
-
-
 }

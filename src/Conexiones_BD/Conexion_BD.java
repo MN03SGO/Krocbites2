@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Conexion_BD {
     Connection con;
     String bd="CRUD_GALLETAS";
-    String url="jdbc:sqlserver://localhost:1433;databaseName="+bd;
+    String url="jdbc:sqlserver://localhost:1433;databaseName="+bd+" ;encrypt=true;trustServerCertificate=true";
     String user="sa";
     String pass="root";
     

@@ -34,6 +34,16 @@ public class Panta_inicio extends javax.swing.JFrame {
         panelRound1 = new PANELES.PanelRound();
         panelRound3 = new PANELES.PanelRound();
         jLabel2 = new javax.swing.JLabel();
+        BTON_INICIO = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_CATE = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_CLIENTES = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_ENTRA = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_PROVE = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_SALI = new RSMaterialComponent.RSButtonMaterialIconDos();
+        BTON_USUARIOS = new RSMaterialComponent.RSButtonMaterialIconDos();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        contenedor = new PANELES.PanelRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,7 +53,7 @@ public class Panta_inicio extends javax.swing.JFrame {
         panelRound1.setRoundTopLeft(25);
         panelRound1.setRoundTopRight(25);
 
-        panelRound3.setBackground(new java.awt.Color(144, 169, 191));
+        panelRound3.setBackground(new java.awt.Color(6, 47, 64));
         panelRound3.setRoundBottomLeft(25);
         panelRound3.setRoundBottomRight(25);
         panelRound3.setRoundTopLeft(25);
@@ -52,20 +62,112 @@ public class Panta_inicio extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/path1.png"))); // NOI18N
         jLabel2.setText("jLabel1");
 
+        BTON_INICIO.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_INICIO.setText("INICIO");
+        BTON_INICIO.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_INICIO.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
+
+        BTON_CATE.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_CATE.setText("CATEGORIAS");
+        BTON_CATE.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_CATE.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DASHBOARD);
+
+        BTON_CLIENTES.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_CLIENTES.setText("CLIENTES");
+        BTON_CLIENTES.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_CLIENTES.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PEOPLE);
+        BTON_CLIENTES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTON_CLIENTESActionPerformed(evt);
+            }
+        });
+
+        BTON_ENTRA.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_ENTRA.setText("ENTRADAS");
+        BTON_ENTRA.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_ENTRA.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.KEYBOARD_ARROW_DOWN);
+
+        BTON_PROVE.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_PROVE.setText("PROVEEDOR");
+        BTON_PROVE.setBackgroundHover(new java.awt.Color(93, 158, 193));
+
+        BTON_SALI.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_SALI.setText("SALIDAS");
+        BTON_SALI.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_SALI.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.KEYBOARD_ARROW_UP);
+
+        BTON_USUARIOS.setBackground(new java.awt.Color(6, 47, 64));
+        BTON_USUARIOS.setText("USUARIOS");
+        BTON_USUARIOS.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        BTON_USUARIOS.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.GROUP_ADD);
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
+
+        jLabel1.setText("SALIR");
+
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound3Layout.createSequentialGroup()
+                        .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BTON_USUARIOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_PROVE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_ENTRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_CLIENTES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_CATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_INICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTON_SALI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addComponent(jSeparator1))
+                .addContainerGap())
+            .addGroup(panelRound3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 639, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(BTON_INICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BTON_CATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTON_CLIENTES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTON_ENTRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTON_PROVE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTON_SALI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BTON_USUARIOS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27))
+        );
+
+        contenedor.setBackground(new java.awt.Color(255, 255, 255));
+        contenedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
@@ -74,11 +176,13 @@ public class Panta_inicio extends javax.swing.JFrame {
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
                 .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1286, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -96,6 +200,10 @@ public class Panta_inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BTON_CLIENTESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_CLIENTESActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTON_CLIENTESActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,11 +241,18 @@ public class Panta_inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_CATE;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_CLIENTES;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_ENTRA;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_INICIO;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_PROVE;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_SALI;
+    private RSMaterialComponent.RSButtonMaterialIconDos BTON_USUARIOS;
+    private PANELES.PanelRound contenedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
     private PANELES.PanelRound panelRound1;
-    private PANELES.PanelRound panelRound2;
     private PANELES.PanelRound panelRound3;
-    private RSMaterialComponent.RSButtonMaterialIconDos rSButtonMaterialIconDos1;
     // End of variables declaration//GEN-END:variables
 }

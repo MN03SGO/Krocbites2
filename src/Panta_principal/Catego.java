@@ -4,11 +4,20 @@
  */
 package Panta_principal;
 
+import Clase_Conexiones_BD.Clase_Conexion_Categorias;
+import Conexiones_BD.Conexion_Consultas_BD;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author anoni
  */
 public class Catego extends javax.swing.JPanel {
+    
+    Clase_Conexion_Categorias Class_Cate = new Clase_Conexion_Categorias();  
+
+    Conexion_Consultas_BD Consul_BD = new Conexion_Consultas_BD();
+    
 
     /**
      * Creates new form Catego
@@ -32,13 +41,13 @@ public class Catego extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         ID_CATEGORIAS = new javax.swing.JTextField();
         CATEGORIAS_NOMB = new javax.swing.JTextField();
-        rSButtonMaterialDos1 = new RSMaterialComponent.RSButtonMaterialDos();
+        Catego_Guardar = new RSMaterialComponent.RSButtonMaterialDos();
         panelRound2 = new PANELES.PanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        rSButtonMaterialDos2 = new RSMaterialComponent.RSButtonMaterialDos();
-        rSButtonMaterialDos3 = new RSMaterialComponent.RSButtonMaterialDos();
-        rSButtonMaterialDos4 = new RSMaterialComponent.RSButtonMaterialDos();
+        Categorias_Tabla = new javax.swing.JTable();
+        Catego_Edi = new RSMaterialComponent.RSButtonMaterialDos();
+        Catego_Eli = new RSMaterialComponent.RSButtonMaterialDos();
+        Catego_Bus = new RSMaterialComponent.RSButtonMaterialDos();
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -91,12 +100,13 @@ public class Catego extends javax.swing.JPanel {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        rSButtonMaterialDos1.setBackground(new java.awt.Color(6, 47, 64));
-        rSButtonMaterialDos1.setText("Guardar");
-        rSButtonMaterialDos1.setRound(25);
-        rSButtonMaterialDos1.addActionListener(new java.awt.event.ActionListener() {
+        Catego_Guardar.setBackground(new java.awt.Color(6, 47, 64));
+        Catego_Guardar.setText("Guardar");
+        Catego_Guardar.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        Catego_Guardar.setRound(25);
+        Catego_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialDos1ActionPerformed(evt);
+                Catego_GuardarActionPerformed(evt);
             }
         });
 
@@ -106,7 +116,7 @@ public class Catego extends javax.swing.JPanel {
         panelRound2.setRoundTopLeft(25);
         panelRound2.setRoundTopRight(25);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Categorias_Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -114,7 +124,7 @@ public class Catego extends javax.swing.JPanel {
                 "ID", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Categorias_Tabla);
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -133,14 +143,20 @@ public class Catego extends javax.swing.JPanel {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        rSButtonMaterialDos2.setText("Editar");
-        rSButtonMaterialDos2.setRound(25);
+        Catego_Edi.setBackground(new java.awt.Color(6, 47, 64));
+        Catego_Edi.setText("Editar");
+        Catego_Edi.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        Catego_Edi.setRound(25);
 
-        rSButtonMaterialDos3.setText("Eliminar");
-        rSButtonMaterialDos3.setRound(25);
+        Catego_Eli.setBackground(new java.awt.Color(6, 47, 64));
+        Catego_Eli.setText("Eliminar");
+        Catego_Eli.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        Catego_Eli.setRound(25);
 
-        rSButtonMaterialDos4.setText("Buscar");
-        rSButtonMaterialDos4.setRound(25);
+        Catego_Bus.setBackground(new java.awt.Color(6, 47, 64));
+        Catego_Bus.setText("Buscar");
+        Catego_Bus.setBackgroundHover(new java.awt.Color(93, 158, 193));
+        Catego_Bus.setRound(25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -157,16 +173,16 @@ public class Catego extends javax.swing.JPanel {
                                     .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
-                                .addComponent(rSButtonMaterialDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Catego_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(63, 63, 63)
                         .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(392, 392, 392)
-                        .addComponent(rSButtonMaterialDos2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Catego_Edi, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMaterialDos3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Catego_Eli, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMaterialDos4, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Catego_Bus, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -179,35 +195,49 @@ public class Catego extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMaterialDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Catego_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButtonMaterialDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonMaterialDos3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonMaterialDos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Catego_Edi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Catego_Eli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Catego_Bus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSButtonMaterialDos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialDos1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonMaterialDos1ActionPerformed
-
+    private void Catego_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Catego_GuardarActionPerformed
+       Class_Cate.setCategoria(CATEGORIAS_NOMB.getText());
+       if(Consul_BD.insertar(Class_Cate)){
+           JOptionPane.showMessageDialog(null, "Categoria ingresada con exito...");
+           limpiar();
+       }
+       else{
+           JOptionPane.showMessageDialog(null, "Problema al ingresar la categoria...");
+           limpiar();
+       }
+       
+    }//GEN-LAST:event_Catego_GuardarActionPerformed
+    void limpiar(){
+    ID_CATEGORIAS.setText("");
+    CATEGORIAS_NOMB.setText("");
+    
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CATEGORIAS_NOMB;
+    private RSMaterialComponent.RSButtonMaterialDos Catego_Bus;
+    private RSMaterialComponent.RSButtonMaterialDos Catego_Edi;
+    private RSMaterialComponent.RSButtonMaterialDos Catego_Eli;
+    private RSMaterialComponent.RSButtonMaterialDos Catego_Guardar;
+    private javax.swing.JTable Categorias_Tabla;
     private javax.swing.JTextField ID_CATEGORIAS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private PANELES.PanelRound panelRound1;
     private PANELES.PanelRound panelRound2;
-    private RSMaterialComponent.RSButtonMaterialDos rSButtonMaterialDos1;
-    private RSMaterialComponent.RSButtonMaterialDos rSButtonMaterialDos2;
-    private RSMaterialComponent.RSButtonMaterialDos rSButtonMaterialDos3;
-    private RSMaterialComponent.RSButtonMaterialDos rSButtonMaterialDos4;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,8 +13,11 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import Panta_principal.Panta_inicio;
+
 import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
-import Conexiones_BD.Conexion_Usuarios;
+
+
+import Conexiones_BD.Conexion_Consultas_BD;
 
 
 
@@ -29,9 +32,11 @@ public class Login extends javax.swing.JFrame {
      */
     
     //CONEXIONES BD
-    Conexion_Usuarios BD_Usu = new Conexion_Usuarios (); 
+    Conexion_Consultas_BD BD_Usu = new Conexion_Consultas_BD (); 
     Clase_Conexion_Usuarios Class_Usu = null;
    
+    
+    
     
     public Login() {
         this.setUndecorated(true);

@@ -29,7 +29,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                              <Component id="rSButtonMaterialDos1" min="-2" max="-2" attributes="0"/>
+                              <Component id="Catego_Guardar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -37,11 +37,11 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
-                      <Component id="rSButtonMaterialDos2" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="Catego_Edi" min="-2" pref="173" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="rSButtonMaterialDos3" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="Catego_Eli" min="-2" pref="173" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="rSButtonMaterialDos4" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="Catego_Bus" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="40" max="32767" attributes="0"/>
@@ -58,15 +58,15 @@
                   <Group type="102" attributes="0">
                       <Component id="panelRound1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="rSButtonMaterialDos1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Catego_Guardar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="panelRound2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="rSButtonMaterialDos2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rSButtonMaterialDos3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rSButtonMaterialDos4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Catego_Edi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Catego_Eli" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Catego_Bus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
@@ -168,16 +168,19 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="rSButtonMaterialDos1">
+    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="Catego_Guardar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="2f" red="6" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c1" green="9e" red="5d" type="rgb"/>
+        </Property>
         <Property name="round" type="int" value="25"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialDos1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Catego_GuardarActionPerformed"/>
       </Events>
     </Component>
     <Container class="PANELES.PanelRound" name="panelRound2">
@@ -219,7 +222,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="Categorias_Tabla">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="2" rowCount="0">
@@ -250,21 +253,39 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="rSButtonMaterialDos2">
+    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="Catego_Edi">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="40" green="2f" red="6" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Editar"/>
+        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c1" green="9e" red="5d" type="rgb"/>
+        </Property>
         <Property name="round" type="int" value="25"/>
       </Properties>
     </Component>
-    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="rSButtonMaterialDos3">
+    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="Catego_Eli">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="40" green="2f" red="6" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c1" green="9e" red="5d" type="rgb"/>
+        </Property>
         <Property name="round" type="int" value="25"/>
       </Properties>
     </Component>
-    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="rSButtonMaterialDos4">
+    <Component class="RSMaterialComponent.RSButtonMaterialDos" name="Catego_Bus">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="40" green="2f" red="6" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
+        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c1" green="9e" red="5d" type="rgb"/>
+        </Property>
         <Property name="round" type="int" value="25"/>
       </Properties>
     </Component>

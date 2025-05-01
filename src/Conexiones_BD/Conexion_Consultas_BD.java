@@ -1,8 +1,7 @@
 package Conexiones_BD;
 
-import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
-import Clase_Conexiones_BD.Encriptador;
-import Conexiones_BD.Conexion_BD;
+
+
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,13 +9,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+
+import Conexiones_BD.Conexion_BD;
+import Clase_Conexiones_BD.Encriptador;
 import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
+import Clase_Conexiones_BD.Clase_Conexion_Categorias;
 
-import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
 
-public class Conexion_Usuarios {
+import java.awt.List;
 
-    public Clase_Conexion_Usuarios login(String usuario, char[] contra) throws SQLException {
+
+
+
+
+public class Conexion_Consultas_BD {
+  
+   
+    
+   // <<---- Usuaerios ---->>
+
+      public Clase_Conexion_Usuarios login(String usuario, char[] contra) throws SQLException {
         Clase_Conexion_Usuarios Conec_Usu = null;
         String sql = "SELECT * FROM usuarios WHERE usuario=?";
         try {
@@ -24,6 +36,7 @@ public class Conexion_Usuarios {
             PreparedStatement PreD = con.prepareStatement(sql);
             PreD.setString(1, usuario);
             ResultSet Rest = PreD.executeQuery();
+
 
             if (Rest.next()) {
                 String contraBD = Rest.getString("contra"); // Contraseña en hash guardada en la base
@@ -40,12 +53,12 @@ public class Conexion_Usuarios {
                     Conec_Usu.setCorreo(Rest.getString("correo"));
                     Conec_Usu.setTipo_usuario(Rest.getString("tipo_usuario"));
                     Conec_Usu.setUsuario(Rest.getString("usuario"));
-                    Conec_Usu.setContra(contraBD); // Guardas el hash (opcional si quieres)
+                    Conec_Usu.setContra(contraBD); 
                 } else {
                     JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
                 }
 
-                java.util.Arrays.fill(contra, '0'); // Limpias la contraseña ingresada
+                java.util.Arrays.fill(contra, '0'); // Limpiar contras guardadas
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario no encontrado");
             }
@@ -54,4 +67,30 @@ public class Conexion_Usuarios {
         }
         return Conec_Usu;
     }
+    //#####
+    //
+    //#####
+    // <<---- Categotrias ---->>
+    public boolean insertar(Clase_Conexion_Categorias ca) {
+        String SQL = "INSERT INTO categoria (categoria) VALUES (?)";
+
+        try (Connection con = new Conexion_BD().conectar();
+            PreparedStatement PreD = con.prepareStatement(SQL)) {
+
+            PreD.setString(1, ca.getCategoria());
+            int n = PreD.executeUpdate();
+            return n != 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al insertar categoría: " + e.getMessage());
+            return false;
+        }
+       
+    
+    
+    
+    
+    
+    }
+
 }

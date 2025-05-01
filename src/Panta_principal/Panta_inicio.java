@@ -4,6 +4,7 @@
  */
 package Panta_principal;
 
+
 import Panta_principal.Catego;
 import java.awt.BorderLayout;
 
@@ -12,6 +13,8 @@ import java.awt.BorderLayout;
  * @author anoni
  */
 public class Panta_inicio extends javax.swing.JFrame {
+    
+    
 
     /**
      * Creates new form Panta_inicio
@@ -238,6 +241,9 @@ public class Panta_inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BTON_CLIENTESActionPerformed
 
     private void BTON_INICIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_INICIOActionPerformed
+        BTON_INICIO.setSelected(true);
+        BTON_CATE.setSelected(false);
+        
         Inicio  Ini = new Inicio ();
         Ini.setSize(1264, 762);
         Ini.setLocation(0,0);
@@ -250,6 +256,10 @@ public class Panta_inicio extends javax.swing.JFrame {
 
     private void BTON_CATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_CATEActionPerformed
         // CATEGORIA
+         BTON_CATE.setSelected(true);
+        BTON_INICIO.setSelected(false);
+       
+        
         Catego ca = new Catego ();
         ca.setSize(1264, 762);
         ca.setLocation(0,0);

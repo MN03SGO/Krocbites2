@@ -8,12 +8,12 @@ package Panta_principal;
  *
  * @author anoni
  */
-public class INICIO extends javax.swing.JPanel {
+public class Inicio extends javax.swing.JPanel {
 
     /**
      * Creates new form INICIO
      */
-    public INICIO() {
+    public Inicio() {
         initComponents();
     }
 
@@ -28,35 +28,53 @@ public class INICIO extends javax.swing.JPanel {
 
         panelRound2 = new PANELES.PanelRound();
         jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         panelRound3 = new PANELES.PanelRound();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         panelRound1 = new PANELES.PanelRound();
         jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         panelRound4 = new PANELES.PanelRound();
         jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         panelRound5 = new PANELES.PanelRound();
         jLabel5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         panelRound6 = new PANELES.PanelRound();
         jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1278, 4));
 
+        panelRound2.setBackground(new java.awt.Color(0, 204, 255));
         panelRound2.setRoundBottomLeft(25);
         panelRound2.setRoundBottomRight(25);
         panelRound2.setRoundTopLeft(25);
         panelRound2.setRoundTopRight(25);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Categorias");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("4");
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
         panelRound2Layout.setHorizontalGroup(
             panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound2Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jLabel2)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound2Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel2))
+                    .addGroup(panelRound2Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel7)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         panelRound2Layout.setVerticalGroup(
@@ -64,9 +82,12 @@ public class INICIO extends javax.swing.JPanel {
             .addGroup(panelRound2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelRound3.setBackground(new java.awt.Color(0, 153, 51));
         panelRound3.setPreferredSize(new java.awt.Dimension(238, 145));
         panelRound3.setRoundBottomLeft(25);
         panelRound3.setRoundBottomRight(25);
@@ -74,15 +95,24 @@ public class INICIO extends javax.swing.JPanel {
         panelRound3.setRoundTopRight(25);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Clientes");
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("20");
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
         panelRound3Layout.setHorizontalGroup(
             panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(jLabel3)
+                .addContainerGap(83, Short.MAX_VALUE))
+            .addGroup(panelRound3Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound3Layout.setVerticalGroup(
@@ -90,9 +120,12 @@ public class INICIO extends javax.swing.JPanel {
             .addGroup(panelRound3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        panelRound1.setBackground(new java.awt.Color(255, 153, 0));
         panelRound1.setPreferredSize(new java.awt.Dimension(238, 145));
         panelRound1.setRoundBottomLeft(25);
         panelRound1.setRoundBottomRight(25);
@@ -100,16 +133,26 @@ public class INICIO extends javax.swing.JPanel {
         panelRound1.setRoundTopRight(25);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Entradas");
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("35");
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(81, 81, 81)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
+            .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
+                    .addContainerGap(111, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addGap(101, 101, 101)))
         );
         panelRound1Layout.setVerticalGroup(
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,8 +160,14 @@ public class INICIO extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
+                    .addContainerGap(58, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addGap(19, 19, 19)))
         );
 
+        panelRound4.setBackground(new java.awt.Color(255, 51, 51));
         panelRound4.setPreferredSize(new java.awt.Dimension(238, 145));
         panelRound4.setRoundBottomLeft(25);
         panelRound4.setRoundBottomRight(25);
@@ -126,15 +175,25 @@ public class INICIO extends javax.swing.JPanel {
         panelRound4.setRoundTopRight(25);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Proveedores");
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("35");
 
         javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
         panelRound4.setLayout(panelRound4Layout);
         panelRound4Layout.setHorizontalGroup(
             panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound4Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel4)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound4Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel4))
+                    .addGroup(panelRound4Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel9)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         panelRound4Layout.setVerticalGroup(
@@ -142,9 +201,12 @@ public class INICIO extends javax.swing.JPanel {
             .addGroup(panelRound4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        panelRound5.setBackground(new java.awt.Color(255, 255, 255));
         panelRound5.setPreferredSize(new java.awt.Dimension(238, 145));
         panelRound5.setRoundBottomLeft(25);
         panelRound5.setRoundBottomRight(25);
@@ -152,25 +214,38 @@ public class INICIO extends javax.swing.JPanel {
         panelRound5.setRoundTopRight(25);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Salidas");
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("6");
 
         javax.swing.GroupLayout panelRound5Layout = new javax.swing.GroupLayout(panelRound5);
         panelRound5.setLayout(panelRound5Layout);
         panelRound5Layout.setHorizontalGroup(
             panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound5Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel5)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGroup(panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound5Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel5))
+                    .addGroup(panelRound5Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel11)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound5Layout.setVerticalGroup(
             panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        panelRound6.setBackground(new java.awt.Color(255, 255, 255));
         panelRound6.setPreferredSize(new java.awt.Dimension(238, 145));
         panelRound6.setRoundBottomLeft(25);
         panelRound6.setRoundBottomRight(25);
@@ -178,22 +253,34 @@ public class INICIO extends javax.swing.JPanel {
         panelRound6.setRoundTopRight(25);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Usuarios");
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("9");
 
         javax.swing.GroupLayout panelRound6Layout = new javax.swing.GroupLayout(panelRound6);
         panelRound6.setLayout(panelRound6Layout);
         panelRound6Layout.setHorizontalGroup(
             panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound6Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel6)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound6Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel6))
+                    .addGroup(panelRound6Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jLabel12)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound6Layout.setVerticalGroup(
             panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -208,7 +295,7 @@ public class INICIO extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelRound6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -221,26 +308,32 @@ public class INICIO extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelRound6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(429, Short.MAX_VALUE))
+                    .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                    .addComponent(panelRound6, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+                .addContainerGap(459, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private PANELES.PanelRound panelRound1;
     private PANELES.PanelRound panelRound2;
     private PANELES.PanelRound panelRound3;

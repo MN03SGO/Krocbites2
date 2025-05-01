@@ -7,6 +7,7 @@ package Panta_principal;
 
 import Panta_principal.Catego;
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 /**
  *
@@ -22,6 +23,8 @@ public class Panta_inicio extends javax.swing.JFrame {
     public Panta_inicio() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0,0,0,0));
+        
         //
         //
         Inicio  Ini = new Inicio ();
@@ -61,10 +64,14 @@ public class Panta_inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setEnabled(false);
+        setFocusCycleRoot(false);
+        setMaximumSize(new java.awt.Dimension(1509, 774));
         setUndecorated(true);
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound1.setForeground(new java.awt.Color(255, 255, 255));
+        panelRound1.setEnabled(false);
+        panelRound1.setMaximumSize(new java.awt.Dimension(1509, 774));
         panelRound1.setRoundBottomLeft(25);
         panelRound1.setRoundBottomRight(25);
         panelRound1.setRoundTopLeft(25);

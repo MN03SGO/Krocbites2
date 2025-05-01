@@ -6,25 +6,51 @@ package Panta_principal;
 
 import Clase_Conexiones_BD.Clase_Conexion_Categorias;
 import Conexiones_BD.Conexion_Consultas_BD;
+
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  *
  * @author anoni
  */
 public class Catego extends javax.swing.JPanel {
-    
+    //CONEXIONES
     Clase_Conexion_Categorias Class_Cate = new Clase_Conexion_Categorias();  
-
     Conexion_Consultas_BD Consul_BD = new Conexion_Consultas_BD();
+    //TABLA
+    DefaultTableModel TablaCategoria = new DefaultTableModel();
+    
     
 
     /**
      * Creates new form Catego
      */
     public Catego() {
-        initComponents();
+      initComponents();
+      TablaCategoria.addColumn("ID");
+      TablaCategoria.addColumn("Categoría");
+      Categorias_Tabla.setModel(TablaCategoria);
+      listar_Categorias();
+        
     }
+    
+    //LISTAR TABLA
+    public void listar_Categorias(){
+        List<Clase_Conexion_Categorias> lista = Consul_BD.listar();
+        Object[] obj=new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+
+            obj[0]=lista.get(i).getId_Categoria();
+            obj[1]=lista.get(i).getCategoria();
+            TablaCategoria.addRow(obj);
+        }
+        Categorias_Tabla.setModel(TablaCategoria);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

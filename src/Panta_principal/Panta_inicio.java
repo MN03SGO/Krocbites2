@@ -22,7 +22,6 @@ public class Panta_inicio extends javax.swing.JFrame {
     public Panta_inicio() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setTitle("Dashboard Responsivo");
         //
         //
         Inicio  Ini = new Inicio ();
@@ -241,6 +240,7 @@ public class Panta_inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BTON_CLIENTESActionPerformed
 
     private void BTON_INICIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_INICIOActionPerformed
+        //ACCION BTN INICIO
         BTON_INICIO.setSelected(true);
         BTON_CATE.setSelected(false);
         
@@ -255,11 +255,10 @@ public class Panta_inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BTON_INICIOActionPerformed
 
     private void BTON_CATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_CATEActionPerformed
-        // CATEGORIA
-         BTON_CATE.setSelected(true);
+        //ACCION BTN CATEGORIA
+        BTON_CATE.setSelected(true);
         BTON_INICIO.setSelected(false);
        
-        
         Catego ca = new Catego ();
         ca.setSize(1264, 762);
         ca.setLocation(0,0);
@@ -272,7 +271,7 @@ public class Panta_inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BTON_CATEActionPerformed
 
     private void BTON_USUARIOS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_USUARIOS1ActionPerformed
-      //SALIR
+      //ACCION DE SALIR
       System.exit(0);
     }//GEN-LAST:event_BTON_USUARIOS1ActionPerformed
 

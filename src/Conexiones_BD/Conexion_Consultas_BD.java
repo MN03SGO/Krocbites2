@@ -10,24 +10,23 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
-import Conexiones_BD.Conexion_BD;
+
 import Clase_Conexiones_BD.Encriptador;
 import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
 import Clase_Conexiones_BD.Clase_Conexion_Categorias;
 
 
-import java.awt.List;
+
+import java.util.List;
+import java.util.ArrayList;
 
 
 
 
 
-public class Conexion_Consultas_BD {
-  
-   
-    
-   // <<---- Usuaerios ---->>
 
+public class Conexion_Consultas_BD { 
+   // <<---- Usuarios ---->>
       public Clase_Conexion_Usuarios login(String usuario, char[] contra) throws SQLException {
         Clase_Conexion_Usuarios Conec_Usu = null;
         String sql = "SELECT * FROM usuarios WHERE usuario=?";
@@ -70,7 +69,7 @@ public class Conexion_Consultas_BD {
     //#####
     //
     //#####
-    // <<---- Categotrias ---->>
+    // <<---- Categorias ---->>
     public boolean insertar(Clase_Conexion_Categorias ca) {
         String SQL = "INSERT INTO categoria (categoria) VALUES (?)";
 
@@ -85,12 +84,28 @@ public class Conexion_Consultas_BD {
             JOptionPane.showMessageDialog(null, "Error al insertar categoría: " + e.getMessage());
             return false;
         }
-       
-    
-    
-    
-    
-    
     }
+    //TABLA CATE
+   public List<Clase_Conexion_Categorias> listar() {
+        List<Clase_Conexion_Categorias> lista = new ArrayList<>();
+        String SQL = "SELECT * FROM categoria";
+        
+        try(Connection con = new Conexion_BD().conectar();
+            PreparedStatement PreD = con.prepareStatement(SQL);
+            ResultSet res =PreD.executeQuery()){
+            
+            while (res.next()){
+                Clase_Conexion_Categorias  cate = new Clase_Conexion_Categorias();
+                cate.setId_Categoria(res.getInt(1));
+                cate.setCategoria(res.getString(2));
+                lista.add(cate);
+
+            }
+        }catch (SQLException e) {
+            JOptionPane.showConfirmDialog(null, e);   
+        }        
+          return lista;
+    }
+    
 
 }

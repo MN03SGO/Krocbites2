@@ -45,7 +45,6 @@ public class Inicio extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1278, 4));
 

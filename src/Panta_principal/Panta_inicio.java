@@ -60,6 +60,8 @@ public class Panta_inicio extends javax.swing.JFrame {
         contenedor = new PANELES.PanelRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setEnabled(false);
         setUndecorated(true);
 
         panelRound1.setBackground(new java.awt.Color(255, 255, 255));

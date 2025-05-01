@@ -247,6 +247,8 @@ public class Catego extends javax.swing.JPanel {
     void limpiar(){
     ID_CATEGORIAS.setText("");
     CATEGORIAS_NOMB.setText("");
+    }
+    void limpiar_Tabla_Cat(){
     
     }
     

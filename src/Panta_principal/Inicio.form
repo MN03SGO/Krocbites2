@@ -58,7 +58,7 @@
                   <Component id="panelRound5" pref="102" max="32767" attributes="0"/>
                   <Component id="panelRound6" pref="102" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="148" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

@@ -65,6 +65,7 @@ public class Panta_inicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setFocusCycleRoot(false);
+        setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(1509, 774));
         setUndecorated(true);
 

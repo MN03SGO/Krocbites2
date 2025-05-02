@@ -65,6 +65,8 @@ public class Conexion_Consultas_BD {
             JOptionPane.showMessageDialog(null, "Error en el login: " + e.getMessage());
         }
         return Conec_Usu;
+        
+        //AREGLO DE SERVIDORES 
     }
     //#####
     //
@@ -106,6 +108,21 @@ public class Conexion_Consultas_BD {
         }        
           return lista;
     }
-    
+   //EDITAR CATEGORIA
+   public boolean editar(Clase_Conexion_Categorias ca){
+        String SQL = "UPDATE categoria SET categoria = ? VALUES where id_Categoria=?";
 
+        try (Connection con = new Conexion_BD().conectar();
+            PreparedStatement PreD = con.prepareStatement(SQL)) {
+
+            PreD.setInt(1, ca.getId_Categoria());
+            PreD.setString(2,ca.getCategoria());
+            int n = PreD.executeUpdate();
+            return n != 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Fallo al editar una celda " + e.getMessage());
+            return false;
+        }
+   }
 }

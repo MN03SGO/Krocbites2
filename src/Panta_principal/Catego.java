@@ -150,6 +150,11 @@ public class Catego extends javax.swing.JPanel {
                 "ID", "Nombre"
             }
         ));
+        Categorias_Tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Categorias_TablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Categorias_Tabla);
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
@@ -173,6 +178,11 @@ public class Catego extends javax.swing.JPanel {
         Catego_Edi.setText("Editar");
         Catego_Edi.setBackgroundHover(new java.awt.Color(93, 158, 193));
         Catego_Edi.setRound(25);
+        Catego_Edi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Catego_EdiActionPerformed(evt);
+            }
+        });
 
         Catego_Eli.setBackground(new java.awt.Color(6, 47, 64));
         Catego_Eli.setText("Eliminar");
@@ -244,6 +254,23 @@ public class Catego extends javax.swing.JPanel {
        }
        
     }//GEN-LAST:event_Catego_GuardarActionPerformed
+
+    private void Catego_EdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Catego_EdiActionPerformed
+       int fila = Categorias_Tabla.getSelectedRow();
+       ID_CATEGORIAS.setText(Categorias_Tabla.getValueAt(fila, 0).toString());
+       CATEGORIAS_NOMB.setText(Categorias_Tabla.getValueAt (fila,1).toString());
+       
+    }//GEN-LAST:event_Catego_EdiActionPerformed
+
+    private void Categorias_TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Categorias_TablaMouseClicked
+        int fila = Categorias_Tabla.getSelectedRow();
+        if(fila == -1 ){
+            JOptionPane.showConfirmDialog(null, "Se selecciono una categoria");
+        }else{
+        
+        }
+        
+    }//GEN-LAST:event_Categorias_TablaMouseClicked
     void limpiar(){
     ID_CATEGORIAS.setText("");
     CATEGORIAS_NOMB.setText("");

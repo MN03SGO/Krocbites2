@@ -10,7 +10,7 @@ $
 : (
 * DATO INTERESANTE
   --Si queres insertar un user desde la SMSS en el caso que lo ocupes tenes que hacer lo siguiente
-  -- INSERT INTO usuarios (
+     * -- INSERT INTO usuarios (
     nombre, apellido, documento, direccion, telefono,
     correo, tipo_usuario, usuario, contra
 )

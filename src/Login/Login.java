@@ -211,7 +211,7 @@ public class Login extends javax.swing.JFrame {
         ini.setVisible(true); 
         this.dispose(); 
     } else {
-        JOptionPane.showMessageDialog(null, "FALLIDO...");
+        JOptionPane.showMessageDialog(null, "La conexion ha fallado");
     }
 
     }//GEN-LAST:event_BTN_INGREActionPerformed

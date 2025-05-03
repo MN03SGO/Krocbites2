@@ -23,7 +23,7 @@ public class Encriptador {
                 sb.append(String.format("%02x", b));
             }
 
-            return sb.toString().toUpperCase(); // 🔥 Forzar mayúsculas
+            return sb.toString().toUpperCase(); 
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }

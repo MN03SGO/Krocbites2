@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author anoni
  */
-public class Catego extends javax.swing.JPanel {
+public final class Catego extends javax.swing.JPanel {
     //CONEXIONES
     Clase_Conexion_Categorias Class_Cate = new Clase_Conexion_Categorias();  
     Conexion_Consultas_BD Consul_BD = new Conexion_Consultas_BD();
@@ -265,19 +265,24 @@ public class Catego extends javax.swing.JPanel {
     private void Categorias_TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Categorias_TablaMouseClicked
         int fila = Categorias_Tabla.getSelectedRow();
         if(fila == -1 ){
-            JOptionPane.showConfirmDialog(null, "Se selecciono una categoria");
+            JOptionPane.showConfirmDialog(null, "Seleccione una categoria");
         }else{
-        
+            Class_Cate.setId_Categoria(Integer.parseInt(ID_CATEGORIAS.getText()));
+            Class_Cate.setCategoria(CATEGORIAS_NOMB.getText());
+            if(Consul_BD.editar(Class_Cate)){
+                JOptionPane.showConfirmDialog(null, "Se modifico con exito");
+                limpiar();
+            }
+            
         }
-        
+            
+      
     }//GEN-LAST:event_Categorias_TablaMouseClicked
     void limpiar(){
     ID_CATEGORIAS.setText("");
     CATEGORIAS_NOMB.setText("");
     }
-    void limpiar_Tabla_Cat(){
-    
-    }
+   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

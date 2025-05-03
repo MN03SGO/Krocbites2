@@ -17,14 +17,13 @@ public class Encriptador {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] hashedPassword = md.digest(input.getBytes());
-            
-            // Bites a String exadecimal
+
             StringBuilder sb = new StringBuilder();
             for (byte b : hashedPassword) {
                 sb.append(String.format("%02x", b));
             }
-            
-            return sb.toString();
+
+            return sb.toString().toUpperCase(); // 🔥 Forzar mayúsculas
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }

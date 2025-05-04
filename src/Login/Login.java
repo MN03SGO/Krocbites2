@@ -206,7 +206,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     if (Class_Usu != null && Class_Usu.getUsuario() != null) {
-        JOptionPane.showMessageDialog(null, "INGRESO EXITOSO");
+        JOptionPane.showMessageDialog(null, "Ingreso exitoso");
         Panta_inicio ini = new Panta_inicio();
         ini.setVisible(true); 
         this.dispose(); 

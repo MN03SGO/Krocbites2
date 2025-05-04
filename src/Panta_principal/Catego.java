@@ -67,13 +67,13 @@ public final class Catego extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         ID_CATEGORIAS = new javax.swing.JTextField();
         CATEGORIAS_NOMB = new javax.swing.JTextField();
-        Catego_Guardar = new RSMaterialComponent.RSButtonMaterialDos();
         panelRound2 = new PANELES.PanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         Categorias_Tabla = new javax.swing.JTable();
         Catego_Edi = new RSMaterialComponent.RSButtonMaterialDos();
         Catego_Eli = new RSMaterialComponent.RSButtonMaterialDos();
         Catego_Bus = new RSMaterialComponent.RSButtonMaterialDos();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -125,16 +125,6 @@ public final class Catego extends javax.swing.JPanel {
                 .addComponent(CATEGORIAS_NOMB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
-
-        Catego_Guardar.setBackground(new java.awt.Color(6, 47, 64));
-        Catego_Guardar.setText("Guardar");
-        Catego_Guardar.setBackgroundHover(new java.awt.Color(93, 158, 193));
-        Catego_Guardar.setRound(25);
-        Catego_Guardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Catego_GuardarActionPerformed(evt);
-            }
-        });
 
         panelRound2.setBackground(new java.awt.Color(255, 255, 255));
         panelRound2.setRoundBottomLeft(25);
@@ -194,6 +184,14 @@ public final class Catego extends javax.swing.JPanel {
         Catego_Bus.setBackgroundHover(new java.awt.Color(93, 158, 193));
         Catego_Bus.setRound(25);
 
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/guardar_1.png"))); // NOI18N
+        jButton2.setText("Guardar");
+        jButton2.setBorder(null);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/guardar_2.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -201,15 +199,11 @@ public final class Catego extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(Catego_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel1)
+                            .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2))
                         .addGap(63, 63, 63)
                         .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -231,7 +225,7 @@ public final class Catego extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Catego_Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton2))
                     .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -242,27 +236,7 @@ public final class Catego extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Catego_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Catego_GuardarActionPerformed
-       Class_Cate.setCategoria(CATEGORIAS_NOMB.getText());
-       if(Consul_BD.insertar(Class_Cate)){
-           JOptionPane.showMessageDialog(null, "Categoria ingresada con exito...");
-           limpiar();
-       }
-       else{
-           JOptionPane.showMessageDialog(null, "Problema al ingresar la categoria...");
-           limpiar();
-       }
-       
-    }//GEN-LAST:event_Catego_GuardarActionPerformed
-
     private void Catego_EdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Catego_EdiActionPerformed
-       int fila = Categorias_Tabla.getSelectedRow();
-       ID_CATEGORIAS.setText(Categorias_Tabla.getValueAt(fila, 0).toString());
-       CATEGORIAS_NOMB.setText(Categorias_Tabla.getValueAt (fila,1).toString());
-       
-    }//GEN-LAST:event_Catego_EdiActionPerformed
-
-    private void Categorias_TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Categorias_TablaMouseClicked
         int fila = Categorias_Tabla.getSelectedRow();
         if(fila == -1 ){
             JOptionPane.showConfirmDialog(null, "Seleccione una categoria");
@@ -271,16 +245,34 @@ public final class Catego extends javax.swing.JPanel {
             Class_Cate.setCategoria(CATEGORIAS_NOMB.getText());
             if(Consul_BD.editar(Class_Cate)){
                 JOptionPane.showConfirmDialog(null, "Se modifico con exito");
-                limpiar();
+                limpiar_labels_Categoria();
+                limpiar_Tabla_Categoria();
             }
             
         }
+    }//GEN-LAST:event_Catego_EdiActionPerformed
+
+    private void Categorias_TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Categorias_TablaMouseClicked
+      
+        
+         int fila = Categorias_Tabla.getSelectedRow();
+       ID_CATEGORIAS.setText(Categorias_Tabla.getValueAt(fila, 0).toString());
+       CATEGORIAS_NOMB.setText(Categorias_Tabla.getValueAt (fila,1).toString());
+       
             
       
     }//GEN-LAST:event_Categorias_TablaMouseClicked
-    void limpiar(){
+    void limpiar_labels_Categoria(){
     ID_CATEGORIAS.setText("");
     CATEGORIAS_NOMB.setText("");
+    }
+    
+    void limpiar_Tabla_Categoria(){
+        for(int i=0;i<TablaCategoria.getRowCount();i++){
+            TablaCategoria.removeRow(i);
+            i=0;
+        }
+  
     }
    
     
@@ -290,9 +282,9 @@ public final class Catego extends javax.swing.JPanel {
     private RSMaterialComponent.RSButtonMaterialDos Catego_Bus;
     private RSMaterialComponent.RSButtonMaterialDos Catego_Edi;
     private RSMaterialComponent.RSButtonMaterialDos Catego_Eli;
-    private RSMaterialComponent.RSButtonMaterialDos Catego_Guardar;
     private javax.swing.JTable Categorias_Tabla;
     private javax.swing.JTextField ID_CATEGORIAS;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

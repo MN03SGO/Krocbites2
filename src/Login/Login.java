@@ -66,12 +66,12 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nombre_Login = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        contra_Login = new javax.swing.JPasswordField();
+        INGRE_Login = new javax.swing.JButton();
+        Sali_LOGIN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,31 +86,39 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/contra.png"))); // NOI18N
 
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nombre_Login.setBorder(null);
+        nombre_Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nombre_LoginActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setBorder(null);
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        contra_Login.setBorder(null);
+        contra_Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                contra_LoginActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INGRESAR");
+        INGRE_Login.setBackground(new java.awt.Color(51, 153, 255));
+        INGRE_Login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        INGRE_Login.setForeground(new java.awt.Color(255, 255, 255));
+        INGRE_Login.setText("INGRESAR");
+        INGRE_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INGRE_LoginActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(255, 51, 51));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("SALIR");
+        Sali_LOGIN.setBackground(new java.awt.Color(255, 51, 0));
+        Sali_LOGIN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Sali_LOGIN.setForeground(new java.awt.Color(255, 255, 255));
+        Sali_LOGIN.setText("SALIR");
+        Sali_LOGIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Sali_LOGINActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -131,13 +139,13 @@ public class Login extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jSeparator2)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nombre_Login, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                                    .addComponent(contra_Login, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(INGRE_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Sali_LOGIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -149,19 +157,19 @@ public class Login extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombre_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1))
+                    .addComponent(contra_Login))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(INGRE_Login)
+                    .addComponent(Sali_LOGIN))
                 .addGap(0, 51, Short.MAX_VALUE))
         );
 
@@ -179,13 +187,61 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nombre_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_LoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nombre_LoginActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void contra_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contra_LoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_contra_LoginActionPerformed
+
+    private void INGRE_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INGRE_LoginActionPerformed
+                                   
+    // Obtener datos de los campos
+     String usuario = nombre_Login.getText().trim();
+        char[] contraChars = contra_Login.getPassword();
+    
+    // Validar campos vacíos
+        if (usuario.isEmpty() || contraChars.length == 0) {
+        JOptionPane.showMessageDialog(this, "Usuario y contraseña son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
+        contra_Login.setText(""); // Limpiar campo de contraseña
+        return;
+        }
+    
+        try {
+        // Autenticar usuario
+         Conexion_Consultas_BD conexionBD = new Conexion_Consultas_BD();
+            Clase_Conexion_Usuarios usuarioAutenticado = conexionBD.login(usuario, contraChars);
+        
+            if (usuarioAutenticado != null) {
+            // Login exitoso
+                JOptionPane.showMessageDialog(this, "Bienvenido, " + usuarioAutenticado.getNombre(), "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            
+            // Aquí rediriges al menú principal según el tipo de usuario
+                if ("admin".equals(usuarioAutenticado.getTipo_usuario())) {
+                    new Panta_inicio().setVisible(true);
+               } else {
+                new Panta_inicio().setVisible(true);
+               }
+            
+            this.dispose(); // Cierra la ventana de login
+        }
+      } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error de conexión: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        e.printStackTrace();
+        } finally {
+        // Limpiar contraseña en memoria por seguridad
+        java.util.Arrays.fill(contraChars, '0');
+        contra_Login.setText("");
+    }
+    
+
+
+    }//GEN-LAST:event_INGRE_LoginActionPerformed
+
+    private void Sali_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sali_LOGINActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_Sali_LOGINActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,16 +279,16 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton INGRE_Login;
+    private javax.swing.JButton Sali_LOGIN;
+    private javax.swing.JPasswordField contra_Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nombre_Login;
     // End of variables declaration//GEN-END:variables
 }

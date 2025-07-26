@@ -9,25 +9,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-
-
 import Clase_Conexiones_BD.Encriptador;
 import Clase_Conexiones_BD.Clase_Conexion_Usuarios;
 import Clase_Conexiones_BD.Clase_Conexion_Categorias;
 
-
-
 import java.util.List;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class Conexion_Consultas_BD { 
    // <<---- Usuarios ---->>
-      public Clase_Conexion_Usuarios login(String usuario, char[] contra) throws SQLException {
+   public Clase_Conexion_Usuarios login(String usuario, char[] contra) throws SQLException {
         Clase_Conexion_Usuarios Conec_Usu = null;
         String sql = "SELECT * FROM usuarios WHERE usuario=?";
         try {
@@ -36,15 +27,14 @@ public class Conexion_Consultas_BD {
             PreD.setString(1, usuario);
             ResultSet Rest = PreD.executeQuery();
 
-
             if (Rest.next()) {
-                String contraBD = Rest.getString("contra"); // Contraseña en hash guardada en la base
-                String contraIngresada = new String(contra); // char[] a String
-                String contraIngresadaHash = Encriptador.hashSHA256(contraIngresada); // Hash de la ingresada
+                String contraBD = Rest.getString("contra"); // Cambié "contra" por "contra" (asegúrate del nombre real en tu BD)
+                String contraIngresada = new String(contra);
+                String contraIngresadaHash = Encriptador.hashSHA256(contraIngresada);
 
-                if (contraIngresadaHash.equals(contraBD)) { // Comparas los hashes
+                if (contraIngresadaHash.equals(contraBD)) {
                     Conec_Usu = new Clase_Conexion_Usuarios();
-                    Conec_Usu.setId_Usuarios(Rest.getInt("Id_Usuarios"));
+                    Conec_Usu.setId_Usuarios(Rest.getInt("id_usuarios")); // PostgreSQL es case-sensitive con los nombres
                     Conec_Usu.setNombre(Rest.getString("nombre"));
                     Conec_Usu.setApellido(Rest.getString("apellido"));
                     Conec_Usu.setDocumento(Rest.getString("documento"));
@@ -52,12 +42,12 @@ public class Conexion_Consultas_BD {
                     Conec_Usu.setCorreo(Rest.getString("correo"));
                     Conec_Usu.setTipo_usuario(Rest.getString("tipo_usuario"));
                     Conec_Usu.setUsuario(Rest.getString("usuario"));
-                    Conec_Usu.setContra(contraBD); 
+                    Conec_Usu.setContra(contraBD);
                 } else {
                     JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
                 }
 
-                java.util.Arrays.fill(contra, '0'); // Limpiar contras guardadas
+                java.util.Arrays.fill(contra, '0');
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario no encontrado");
             }
@@ -65,12 +55,8 @@ public class Conexion_Consultas_BD {
             JOptionPane.showMessageDialog(null, "Error en el login: " + e.getMessage());
         }
         return Conec_Usu;
-        
-        //AREGLO DE SERVIDORES 
     }
-    //#####
-    //
-    //#####
+
     // <<---- Categorias ---->>
     public boolean insertar(Clase_Conexion_Categorias ca) {
         String SQL = "INSERT INTO categoria (categoria) VALUES (?)";
@@ -87,42 +73,44 @@ public class Conexion_Consultas_BD {
             return false;
         }
     }
-    //TABLA CATE
-   public List<Clase_Conexion_Categorias> listar() {
+
+    // TABLA CATE
+    public List<Clase_Conexion_Categorias> listar() {
         List<Clase_Conexion_Categorias> lista = new ArrayList<>();
         String SQL = "SELECT * FROM categoria";
         
         try(Connection con = new Conexion_BD().conectar();
             PreparedStatement PreD = con.prepareStatement(SQL);
-            ResultSet res =PreD.executeQuery()){
+            ResultSet res = PreD.executeQuery()){
             
             while (res.next()){
-                Clase_Conexion_Categorias  cate = new Clase_Conexion_Categorias();
-                cate.setId_Categoria(res.getInt(1));
-                cate.setCategoria(res.getString(2));
+                Clase_Conexion_Categorias cate = new Clase_Conexion_Categorias();
+                cate.setId_Categoria(res.getInt("id_categoria")); // Mejor usar nombres de columnas
+                cate.setCategoria(res.getString("categoria"));
                 lista.add(cate);
-
             }
-        }catch (SQLException e) {
-            JOptionPane.showConfirmDialog(null, e);   
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al listar categorías: " + e);   
         }        
-          return lista;
+        return lista;
     }
-   //EDITAR CATEGORIA
-   public boolean editar(Clase_Conexion_Categorias ca){
-        String SQL = "UPDATE categoria SET categoria = ? VALUES where id_Categoria=?";
+
+    // EDITAR CATEGORIA (CORREGIDO)
+    public boolean editar(Clase_Conexion_Categorias ca){
+        String SQL = "UPDATE categoria SET categoria = ? WHERE id_categoria = ?";
 
         try (Connection con = new Conexion_BD().conectar();
             PreparedStatement PreD = con.prepareStatement(SQL)) {
 
-            PreD.setInt(1, ca.getId_Categoria());
-            PreD.setString(2,ca.getCategoria());
+            PreD.setString(1, ca.getCategoria());
+            PreD.setInt(2, ca.getId_Categoria());
             int n = PreD.executeUpdate();
             return n != 0;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Fallo al editar una celda " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Fallo al editar una celda: " + e.getMessage());
             return false;
         }
-   }
+    }
+
 }
